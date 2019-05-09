@@ -78,10 +78,18 @@ function Circle(x, y, dx, dy, radius, color, minRadius) {
 var circles = [];
 
 function init(){
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
 
     circles = [];
 
-    for(var i = 0; i < 1000; i++){
+    if(canvas.width > canvas.height){
+        maxRadius  = canvas.height/6;
+    } else {
+        maxRadius  = canvas.width/6;
+    }
+
+    for(var i = 0; i < maxRadius*6; i++){
         var radius = Math.floor(Math.random()*25);
         var x = radius + Math.floor(Math.random()*(window.innerWidth-radius*2));
         var y = radius + Math.floor(Math.random()*(window.innerHeight-radius*2));
