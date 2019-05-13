@@ -82,6 +82,8 @@ function init(){
     canvas.width = window.innerWidth;
 
     circles = [];
+    mouse.x = canvas.width/2;
+    mouse.y = canvas.height/2;
 
     if(canvas.width > canvas.height){
         maxRadius  = canvas.height/6;
